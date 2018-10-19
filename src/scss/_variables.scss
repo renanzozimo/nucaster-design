@@ -17,7 +17,60 @@ $radius-mini: 2px;
 $radius: $spacing-24;
 
 //GRID
-$break-points: ();
+$break-points: (
+  (
+    name: xs,
+    min: 0,
+    max: 600
+  ),
+  (
+    name: sm,
+    min: 601,
+    max: 960
+  ),
+  (
+    name: md,
+    min: 961,
+    max: 1280
+  ),
+  (
+    name: lg,
+    min: 1281,
+    max: 1920
+  ),
+  (
+    name: lg,
+    min: 1920,
+    max: ""
+  )
+);
+
+@mixin for-phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
+
 $gr-gutter: $spacing-24;
 
 //SHADOWS
