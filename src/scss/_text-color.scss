@@ -1,0 +1,47 @@
+.text-color {
+  &--primary {
+    color: $primary;
+  }
+  &--accent {
+    color: $accent;
+  }
+  &--primary-light {
+    color: $primary-light;
+  }
+  &--accent--light {
+    color: $accent-light;
+  }
+  &--primary-dark {
+    color: $primary-dark;
+  }
+  &--accent-dark {
+    color: $accent-dark;
+  }
+  &--success {
+    color: $success;
+  }
+  &--warning {
+    color: $warning;
+  }
+  &--error {
+    color: $error;
+  }
+  &--white {
+    color: $white;
+  }
+  &--white-2 {
+    color: $white-2;
+  }
+  &--white-3 {
+    color: $white-3;
+  }
+  &--black {
+    color: $black;
+  }
+  &--black-2 {
+    color: $black-2;
+  }
+  &--black-3 {
+    color: $black-2;
+  }
+}

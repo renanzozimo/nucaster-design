@@ -1,0 +1,161 @@
+- PLAYER
+
+  - DESC
+    - Allow user listen a podcast episode as he or she wants, navigating by key events from this episode.
+    - Invite anonymous users to register
+    - Acessible interface
+
+  - SUBJECTS
+    1 - An EPISODE from any podcast
+    2 - The author of this EPISODE (The podcast)
+    3 - My preferences
+      - About Nucaster
+      - About this Podcast
+      - About this episode
+    4 - Navigation
+    5 - Entry
+
+  - ACTIONS:
+    - Play/Pause
+    - 10 or 15 seconds fast forward
+    - 10 or 15 seconds fast rewind
+    - Volume control
+    - Change reproduction speed
+    - Comment in specific key event (v2)
+    - Access a list of key events
+    - Enable/Disabled subtitles
+    - Go to a specific key event
+    - Dowload this episode
+
+  - EXITS
+    - Podcast page:
+      - Podcast icon (bottom left)
+      - ??
+    - Discover:
+      - "Discover" button in navigation bar
+    - My podcasts:
+      - "My Podcasts" button in navigation bar
+    - Login:
+      - "Login" button
+      - "Register" button
+      - "My podcasts" when user is no logged
+
+  - RULES
+    - Always show an image on center. When there is no key event, show the episode cover image
+    - Left image = previously key event (with anchor click)
+    - Right image = next key event (with anchor click)
+    - To any interaction that needs a lot of attention, stop audio and offer a modal interface to user
+    - When use rewind or forward button, always preserve current audio state (pause/play)
+
+  - INTERFACE DESCRIPTION
+    - TOP
+      - PLAY/PAUSE is the main ACTIONS
+      - Nucaster logo should reduced to left symbol only in small screens
+      - Buttons in nagviation par should recudes to icon only in small screens
+      - NO SEARCH: Serach tool is a part of "Explore" or "Discover" context
+      - "Login" + "Register" should converted to "Entry"
+
+    - PLAYER
+      - Importance hierarchy
+        - Play/Pause (object: Audio)
+        - Rewind/forward (object: Audio)
+        - Speed velocity + Volume (object: Audio)
+        - Volume (object: Audio)
+        - Subtitles (object: Episode)
+        - Key events list (object: Episode + Audio)
+
+    - IMAGES
+      - Composed by timeline of images/link/photo, related to key events
+      - Middle image must be larger
+      - Interface should safeguard portrait images display
+      - Background blurry, using active image or de episode cover image
+      - Click on the following or previous images leads to the key event
+
+
+  - WHAT DO I NEED TO KNOW?
+    - Duration
+    - Remaining time
+    - Current time
+    - Dowloaded or Streaming
+    - Active key event
+    - Next key event
+    - Prev key event
+    - Current speed
+    - Current volume
+    - Subtitles enable or disable
+    - List os key events
+    - If i'm logged or not
+    - Is paused or played
+    - Is muted or not
+
+- LOGIN
+
+  - DESC
+    - Allow user create an account
+    - Allow user sign in
+
+  - ACTIONS
+    - Create an account with Facebook
+    - Create an account with Google
+    - Create an account with e-mail
+    - Sign in with an account
+
+  - EXITS
+    - Facebook login
+    - Google login
+    - My podcasts (Create OR Sign in)
+
+  - INTERFACE DESCRIPTION
+    - Full size photo as background
+    - A Panel to group
+      - Facebook login button
+      - Google login button
+      - Login form
+      - Button to register
+
+  - WHAT DO I NEED TO KNOW?
+    - Password rules
+
+- MY PODCASTS
+
+  - DESC
+    - Show all podcasts that user is subscribed
+    - Show episodes from these Podcasts
+    - Show recomended content (Podcasts and Episodes)
+
+  - SUBJECTS
+    1 - Episodes (filter + order by)
+    2 - Podcasts
+
+  - ACTIONS:
+    - Play any episode
+    - Find an episode
+    - Unsubscribe from a Podcast
+    - Download an episode
+    - Remove downloaded episode
+
+  - EXITS
+    - Discover
+    - Sign out
+    - Podcast page
+
+  - INTERFACE DESCRIPTION
+    - A simple grid with content (Podcasts or Episode)
+    - Filter, order by and Search
+    - Switch (Episodes | Podcasts)
+
+
+
+- - - - - - - 
+
+TODOS os problemas serão resolvidos com um design system mais eficiente, então, paciência:
+
+- Nâo está claro o funcionamento e hieraquia da capa
+  - PLayer está tocando oq?
+  - Oq são as bolinhas?
+
+- Navbar não está legal para 1366 (NEM para 1366, quebra o layout por conta da disposição dos elementos)
+- Tamanho dos botões e espaçamentos precisam ser equalizados
+- Imagens portraint = MORTE!
+- Alinhamento dos botÕes de navegação nas categorias (tem que alinhar ao centro, mas ESTÁ de fato alinhado ao centro... mas não da imagem, sim do container... por enquanto fica assim)
+- 

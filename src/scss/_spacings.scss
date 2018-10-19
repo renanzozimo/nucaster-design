@@ -1,0 +1,65 @@
+//MIXIN
+@mixin spacingUtilityClasses($selector, $prop, $spacings: (4, 8, 12, 16)) {
+  @each $n in $spacings {
+    #{$selector}-#{$n} {
+      #{$prop}: #{$n}px;
+    }
+    #{$selector}-#{$n}--force {
+      #{$prop}: #{$n}px !important;
+    }
+  }
+}
+
+//MARGINS
+@include spacingUtilityClasses(
+  ".mg",
+  "margin",
+  (0, 4, 8, 12, 16, 24, 32, 48, 64)
+);
+@include spacingUtilityClasses(
+  ".mg-tp",
+  "margin-top",
+  (0, 4, 8, 12, 16, 24, 32, 48, 64)
+);
+@include spacingUtilityClasses(
+  ".mg-rt",
+  "margin-right",
+  (0, 4, 8, 12, 16, 24, 32, 48, 64)
+);
+@include spacingUtilityClasses(
+  ".mg-bt",
+  "margin-bottom",
+  (0, 4, 8, 12, 16, 24, 32, 48, 64)
+);
+@include spacingUtilityClasses(
+  ".mg-lt",
+  "margin-left",
+  (0, 4, 8, 12, 16, 24, 32, 48, 64)
+);
+
+//PADDINGS
+@include spacingUtilityClasses(
+  ".pd",
+  "padding",
+  (0, 4, 8, 12, 16, 24, 32, 48, 64)
+);
+@include spacingUtilityClasses(
+  ".pd-tp",
+  "padding-top",
+  (0, 4, 8, 12, 16, 24, 32, 48, 64)
+);
+@include spacingUtilityClasses(
+  ".pd-rt",
+  "padding-right",
+  (0, 4, 8, 12, 16, 24, 32, 48, 64)
+);
+@include spacingUtilityClasses(
+  ".pd-bt",
+  "padding-bottom",
+  (0, 4, 8, 12, 16, 24, 32, 48, 64)
+);
+@include spacingUtilityClasses(
+  ".pd-lt",
+  "padding-left",
+  (0, 4, 8, 12, 16, 24, 32, 48, 64)
+);

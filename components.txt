@@ -1,0 +1,12 @@
+NAVBAR
+  - White BG
+    - Black text
+    - Colored + Black logo
+  - Transparent BG
+    - White text
+    - White logo
+    - Main button - Raised gradient
+    - Button - 
+
+  - Logo SVG
+    - Transition to White fully

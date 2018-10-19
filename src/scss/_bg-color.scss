@@ -1,0 +1,71 @@
+.bg-color {
+  &--gradient {
+    background-color: $primary;
+    background-image: $btn-primary-bg;
+  }
+  &--primary {
+    background-color: $primary;
+  }
+  &--accent {
+    background-color: $accent;
+  }
+  &--primary-light {
+    background-color: $primary-light;
+  }
+  &--accent--light {
+    background-color: $accent-light;
+  }
+  &--primary-dark {
+    background-color: $primary-dark;
+  }
+  &--accent-dark {
+    background-color: $accent-dark;
+  }
+  &--body-bg {
+    background-color: $body-bg;
+  }
+  &--success {
+    background-color: $success;
+  }
+  &--warning {
+    background-color: $warning;
+  }
+  &--error {
+    background-color: $error;
+  }
+  &--white {
+    background-color: $white;
+  }
+  &--black-2 {
+    background-color: $black-2;
+  }
+  &--brand {
+    &-1 {
+      background-color: #c06bff;
+    }
+    &-2 {
+      background-color: #af6aff;
+    }
+  }
+}
+
+@mixin gradientBg($qty, $color1, $color2) {
+  @for $i from 0 through ($qty - 1) {
+    &-#{$i} {
+      background: linear-gradient(
+        0deg,
+        rgba($color1, (1 / ($qty - 1) * $i)),
+        rgba($color1, (1 / ($qty - 1) * $i))
+      );
+      background-color: rgba($color2, 1);
+    }
+  }
+}
+
+.renan {
+  @include gradientBg(7, $primary, $accent);
+}
+
+.duilio {
+  @include gradientBg(4, $accent, $primary);
+}

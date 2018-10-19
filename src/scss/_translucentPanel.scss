@@ -1,0 +1,77 @@
+@mixin translucentPanel(
+  $image: "https://img1.ibxk.com.br/2017/07/13/13160112901226.jpg?w=700",
+  $height: 100vh,
+  $width: 100vw,
+  $blur: 20px,
+  $panelSpacing: 30px,
+  $panelPosition: fixed,
+  $panelZIndex: 10,
+  $panelTop: 0,
+  $panelRight: auto,
+  $panelBottom: auto,
+  $panelLeft: 0,
+  $contentTop: -30px,
+  $contentRight: auto,
+  $contentBottom: auto,
+  $contentLeft: -30px
+) {
+  .translucent-panel {
+    height: $height;
+    width: $width;
+    padding: $panelSpacing;
+    position: $panelPosition;
+    top: $panelTop;
+    left: $panelLeft;
+    right: $panelRight;
+    bottom: $panelBottom;
+    z-index: $panelZIndex;
+
+    &__img {
+      background-image: url($image);
+      position: absolute;
+      top: $contentTop;
+      left: $contentLeft;
+      bottom: $contentBottom;
+      right: $contentRight;
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+    &__card {
+      & {
+        overflow: hidden;
+        position: relative;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: $panelSpacing * -1;
+        left: $panelSpacing * -1;
+        height: $height;
+        width: $width;
+        background-image: url($image);
+        background-size: cover;
+        filter: blur($blur);
+        z-index: -1;
+      }
+    }
+  }
+}
+
+@include translucentPanel(
+  $image: "https://img1.ibxk.com.br/2017/07/13/13160112901226.jpg?w=700",
+  $height: 100vh,
+  $width: 100vw,
+  $blur: 20px,
+  $panelSpacing: 30px,
+  $panelPosition: absolute,
+  $panelZIndex: 10,
+  $panelTop: 0,
+  $panelRight: auto,
+  $panelBottom: auto,
+  $panelLeft: 0,
+  $contentTop: 0,
+  $contentRight: 0,
+  $contentBottom: 0,
+  $contentLeft: 0
+);

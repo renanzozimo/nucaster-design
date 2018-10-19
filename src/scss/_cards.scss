@@ -1,0 +1,22 @@
+//CARD
+.card {
+  &--interactive {
+    @include includeInteractiveShadow(1);
+  }
+
+  & {
+    @include includeShadow(1);
+  }
+
+  &:not(.no-radius) {
+    border-radius: $radius-mini;
+  }
+
+  &:not([class*="--translucent"]) {
+    background-color: #fff;
+  }
+
+  &--translucent {
+    background-color: rgba(#fff, 0.8);
+  }
+}

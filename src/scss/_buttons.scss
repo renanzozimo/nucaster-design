@@ -1,0 +1,74 @@
+//BUTTONS
+.btn {
+  & {
+    padding: $spacing-12 $spacing-24;
+    border-radius: $radius;
+    transition: all 375ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    font-weight: 500;
+  }
+
+  &:not([disabled]):not([class*="cursor"]) {
+    cursor: pointer;
+  }
+
+  & {
+    &--raised {
+      &-primary {
+        background-image: $btn-primary-bg;
+        background-color: $primary;
+        color: $white;
+      }
+
+      &-white {
+        background-color: $white;
+        color: $primary;
+      }
+    }
+
+    &--bordered {
+      &-primary {
+        color: $primary;
+
+        &:hover {
+          background-color: $primary-light;
+        }
+      }
+
+      &-accent {
+        color: $accent;
+
+        &:hover {
+          background-color: $accent-light;
+        }
+      }
+
+      &-white {
+        color: $white;
+
+        &:hover {
+          background-color: $white-4;
+        }
+      }
+
+      &-black {
+        color: $black-2;
+
+        &:hover {
+          background-color: $black-5;
+        }
+      }
+    }
+  }
+
+  &[class*="--raised"]:not(.btn--no-shadow) {
+    @include includeInteractiveShadow(1);
+  }
+
+  &[class*="--bordered"] {
+    border: 1px solid;
+  }
+
+  &:not(.btn--wrap) {
+    white-space: nowrap;
+  }
+}
